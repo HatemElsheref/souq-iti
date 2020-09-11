@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SOUQ</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font-awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Insert to your webpage before the </head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="icon" href="https://cf1.s3.souqcdn.com/static/ltr/en/images/souq-new.ico">
+    <style>
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #ff6600;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #myDiv {
+            display: none;
+        }
+        .toast{
+            position: fixed;
+            top: 20px;
+            right:  20px;
+            z-index: 999999999;
+        }
+        .slider-image{
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body onload="HideLoader()" style="margin:0;">
+<div id="loader"></div>
+<div id="myDiv" class="animate-bottoms">
+    <!-- Start header -->
+    <header>
+        <!-- Image and text -->
+        <nav class="navbar  navbar-light   navbar-expand-lg" id="nav_1">
+            <span>
+                 <span class="fa fa-envelope text-white"></span>
+                <span class="text-white ml-2 mr-2 contact">Email : support@souq.com</span>
+            </span>
+            <span>
+                  <span class="fa fa-phone text-white"></span>
+                   <span class="text-white ml-2 mr-2 contact">call us : +201090703457</span>
+           </span>
+                <div class="navbar-collapse" id="nav-info">
+                    <span class="navbar-nav mr-auto">
+                    </span>
+                    <!--end navbar-right -->
+                                <!--    social        -->
+                    <a href="#" class="text-white social"><span class=" fa fa-facebook ml-2 mr-2 "></span></a>
+                    <a href="#" class="text-white social"><span class=" fa fa-twitter ml-2 mr-2 "></span></a>
+                    <a href="#" class="text-white social"><span class=" fa fa-instagram ml-2 mr-2 "></span></a>
+                    <span class="text-white">
+                                <span class="fa fa-heart text-white"></span>
+                                <span class="badge">0</span>
+                    </span>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown ">
+                            <span id="cart-icon" class="dropdown-toggle text-white " data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="fa fa-shopping-cart" style="color:#ff6600"></span>
+                                <span class="badge " id="total-products">0</span>
+                            </span>
+                            <ul class="dropdown-menu dropdown-cart" role="menu" id="put-you-products-here">
+                                <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <span class="item-info">
+                                            <span>No Products Founded</span>
+                                        </span>
+                                        </span>
+                                </span>
+                                </li>
+                                <li class="divider"></li>
+                                <!--                            <li><a class="text-center" href="">View Cart</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="text-white ml-2 mr-2" style="font-family: monospace"> | الجنيه المصرى </span>
+                    <span class="flag-icon flag-icon-eg "></span>
+                </div>
+        </nav>
+        <nav class="navbar  navbar-expand-md navbar-light"  id="nav_2" style="/*background-color: #44137e*/">
+            <a class="navbar-brand" href="#">
+                SOUQ
+                <img src="images/Souq_Logo_Primary_EN.svg" width="30" height="30" class="d-inline-block align-top" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="shop.html">Shop</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="put-categories-here">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="auth.html">Login</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="auth.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+    <!-- Start main -->
+    <main role="main">
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-7 col-12 order-md-1 order-2">
+                                    <h4>First slider <br>
+                                        awesome product</h4>
+                                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                    <a href="#">BUY NOW</a> </div>
+                                <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto slider-image" alt="slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-7 col-12 order-md-1 order-2">
+                                    <h4>Second Slider your <br>
+                                        awesome product</h4>
+                                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                    <a href="#">BUY NOW</a> </div>
+                                <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto slider-image" alt="slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-7 col-12 order-md-1 order-2">
+                                    <h4>Third slider your <br>
+                                        awesome product</h4>
+                                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                    <a href="#">BUY NOW</a> </div>
+                                <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto slider-image" alt="slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-7 col-12 order-md-1 order-2">
+                                    <h4>Four slider your <br>
+                                        awesome product</h4>
+                                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                    <a href="#">BUY NOW</a> </div>
+                                <div class="col-md-5 col-12 order-md-2 order-1"><img src="images/—Pngtree—golden%20champagne%20celebrates%20gradient%20elements_3761126.png" class="mx-auto" alt="slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+        <!--slide end-->
+        <!-- Start container -->
+        <section class="jumbotron text-center " style="/*margin-top: -55px*/">
+            <div class="container">
+                <h3>Find All Your Needs Here </h3>
+                <p class="lead text-muted">
+                    A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write perfect ad copy
+                </p>
+                <p>
+                <div class="input-group mb-3 " style="width: 500px;margin: auto">
+                    <input type="text" class="form-control" placeholder="Search For You Product " aria-label="Recipient&#39;s username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary"  type="button" id="products-search-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </section>
+        <div class="container mt-5">
+            <h3 class="hvr-forward  header-title">Trending <hr></h3>
+            <div class="row" id="put-products-here">
+            </div>
+            <a href="http://localhost/iti/projects/v2/front-end/pages/shop.html" id="link-to-shop" class="hvr-pulse" >
+                <span class="badge"style="background-color: #ff6600;color: #fff;">
+                    Go To Shop
+                     <i class="fa fa-arrow-circle-right"></i>
+                </span>
+            </a>
+        </div>
+        <section class="jumbotron text-center mt-5" style="margin-top: -55px">
+            <div class="container">
+                <h3>Subscribe to be updated </h3>
+                <p>
+                <div class="input-group mb-3 " style="width: 500px;margin: auto">
+                    <input type="text" class="form-control" placeholder="subscribe to know the new products" aria-label="Recipient&#39;s username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn"  type="button" id="products-subscribe-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </section>
+        <div class="container">
+            <h3 class="hvr-forward header-title">Our  Partners <hr></h3>
+            <section class="customer-logos slider">
+                <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+                <div class="slide"><img src="http://www.webcoderskull.com/img/logo.png"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+            </section>
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer bg-dark text-white text-center mt-5">
+            <p class="lead">All Right  &copy;Reserved For ITI 2020</p>
+        </footer>
+        <div>
+            <a href="#" class="hvr-pulse" id="to-top">
+                <i class="fa fa-arrow-up" >
+                </i>
+            </a>
+        </div>
+        <div class="toast" role="alert" data-delay="2000" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="mr-auto" style="color: #ff6600">SOUQ</strong>
+                <small class="text-muted">Just Now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+               Product Added To Cart Successfully
+            </div>
+        </div>
+    </main>
+    <!-- End main -->
+</div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

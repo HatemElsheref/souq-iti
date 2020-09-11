@@ -70,7 +70,10 @@ function getCurrentProduct(){
     });
 
 }
-
+var products;
+function setProducts(listOfProducts) {
+    products = listOfProducts;
+}
 
 function setCategories(items) {
     categories = items;
@@ -157,7 +160,8 @@ function createProductDom(information) {
     let productName = document.createElement('h3');
     productName.className = 'title';
     let productLink=document.createElement('a');
-    productLink.href=app+'/pages/product-details.html?id='+information.id;
+    productLink.href=app+'/product-details.html?id='+information.id;
+    // productLink.href=app+'/pages/product-details.html?id='+information.id;
     productLink.innerHTML=information.name;
     productName.appendChild(productLink);
 
@@ -304,7 +308,9 @@ function getRelatedProducts(){
             if(item.trend && counter<8){
                 father.appendChild(createProductDom(item));
                 counter++;
+                list.addNewProduct(item);
             }});
+        setProducts(list.allProducts());
     });
 
 }

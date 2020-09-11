@@ -189,7 +189,8 @@ function createProductDom(information) {
     let productName = document.createElement('h3');
     productName.className = 'title';
     let productLink=document.createElement('a');
-    productLink.href=app+'/pages/product-details.html?id='+information.id;
+    productLink.href=app+'/product-details.html?id='+information.id;
+    // productLink.href=app+'/pages/product-details.html?id='+information.id;
     productLink.innerHTML=information.name;
     productName.appendChild(productLink);
 
@@ -268,7 +269,8 @@ function createProductDom1(information) {
     let productName = document.createElement('h3');
     productName.className = 'title';
     let productLink=document.createElement('a');
-    productLink.href=app+'/pages/product-details.html?id='+information.id;
+    productLink.href=app+'/product-details.html?id='+information.id;
+    // productLink.href=app+'/pages/product-details.html?id='+information.id;
     productLink.innerHTML=information.name;
     productName.appendChild(productLink);
 
