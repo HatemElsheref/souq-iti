@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SOUQ</title>
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- font-awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/hover.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Insert to your webpage before the </head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="icon" href="https://cf1.s3.souqcdn.com/static/ltr/en/images/souq-new.ico">
+    <style>
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #ff6600;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #myDiv {
+            display: none;
+        }
+        .toast{
+            position: fixed;
+            top: 20px;
+            right:  20px;
+            z-index: 999999999;
+        }
+        .slider-image{
+            margin-top: 120px;
+        }
+    </style>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../plugins/shop-slider/dist/carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+    <style>
+        #dummy{
+            width: 1000px;
+        }
+        body{
+            margin:0;
+            padding:0;
+        }
+        /* .container{
+            width:90%
+            margin:10px auto;
+        } */
+        .portfolio-menu{
+            text-align:center;
+        }
+        .portfolio-menu ul li{
+            display:inline-block;
+            margin:0;
+            list-style:none;
+            /*padding:10px 15px;*/
+            cursor:pointer;
+            -webkit-transition:all 05s ease;
+            -moz-transition:all 05s ease;
+            -ms-transition:all 05s ease;
+            -o-transition:all 05s ease;
+            transition:all .5s ease;
+        }
+
+        .portfolio-item{
+            /*width:100%;*/
+        }
+        .portfolio-item .item{
+            /*width:303px;*/
+            float:left;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body onload="HideLoader()" style="margin:0;">
+<div id="loader"></div>
+<div id="myDiv" class="animate-bottoms">
+    <!-- Start header -->
+    <header>
+        <!-- Image and text -->
+        <nav class="navbar  navbar-light   navbar-expand-lg" id="nav_1">
+            <!--            <a class="navbar-brand text-white" href="#">-->
+            <!--                SOUQ-->
+            <!--                <img src="Souq_Logo_Primary_EN.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">-->
+            <!--            </a>-->
+            <span>
+                 <span class="fa fa-envelope text-white"></span>
+                <span class="text-white ml-2 mr-2 contact">Email : support@souq.com</span>
+            </span>
+            <span>
+                  <span class="fa fa-phone text-white"></span>
+                   <span class="text-white ml-2 mr-2 contact">call us : +201090703457</span>
+           </span>
+            <div class="navbar-collapse" id="nav-info">
+                    <span class="navbar-nav mr-auto">
+                    </span>
+                <!--end navbar-right -->
+                <!--    social        -->
+                <a href="#" class="text-white social"><span class=" fa fa-facebook ml-2 mr-2 "></span></a>
+                <a href="#" class="text-white social"><span class=" fa fa-twitter ml-2 mr-2 "></span></a>
+                <a href="#" class="text-white social"><span class=" fa fa-instagram ml-2 mr-2 "></span></a>
+                <span class="text-white">
+                                <span class="fa fa-heart text-white"></span>
+                                <span class="badge">0</span>
+                    </span>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown ">
+                            <span id="cart-icon" class="dropdown-toggle text-white " data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="fa fa-shopping-cart" style="color:#ff6600"></span>
+                                <span class="badge " id="total-products">0</span>
+                            </span>
+                        <ul class="dropdown-menu dropdown-cart" role="menu" id="put-you-products-here">
+                            <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <span class="item-info">
+                                            <span>No Products Founded</span>
+                                        </span>
+                                        </span>
+                                </span>
+                            </li>
+                            <li class="divider"></li>
+                            <!--                            <li><a class="text-center" href="">View Cart</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+                <span class="text-white ml-2 mr-2" style="font-family: monospace"> | الجنيه المصرى </span>
+                <span class="flag-icon flag-icon-eg "></span>
+            </div>
+        </nav>
+        <nav class="navbar  navbar-expand-md navbar-light"  id="nav_2" style="/*background-color: #44137e*/">
+            <a class="navbar-brand" href="#">
+                SOUQ
+                <img src="../images/Souq_Logo_Primary_EN.svg" width="30" height="30" class="d-inline-block align-top" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="shop.html">Shop</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="put-categories-here">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="auth.html">Login</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="auth.html">Register</a>
+                    </li>
+                </ul>
+                <!--                <span class="dropdown">-->
+                <!--                    <div class="container">-->
+                <!--                          <ul class="navbar-nav mr-auto">-->
+                <!--                    <li class="nav-item">-->
+                <!--                        <a class="nav-link hvr-underline-from-left hover-color" href="http://localhost/projects/index.html">Login</a>-->
+                <!--                    </li>-->
+                <!--                        <li class="nav-item ">-->
+                <!--                            <a class="nav-link hvr-underline-from-left hover-color" href="http://localhost/projects/index.html">Register</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                    </div>-->
+                <!--                </span>-->
+            </div>
+        </nav>
+
+
+        <!--        <nav class="navbar navbar-expand-md navbar-dark bg-dark " id="nav-2">-->
+        <!--            <ul class="navbar-nav  mr-auto" id="put-categories-here">-->
+
+        <!--                <li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Laptops</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Dell</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">HP</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Mouse</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Desktop</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Windows</a></li></ul>-->
+        <!--        </nav>-->
+    </header>
+    <!-- End header -->
+    <!-- Start main -->
+    <main role="main">
+        <div class="container-fluid bg-light ">
+            <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-2 pt-3">
+                    <div class="form-group ">
+                        <select id="inputState " class="form-control">
+                            <option selected>Brand</option>
+                            <option>BMW</option>
+                            <option>Audi</option>
+                            <option>Maruti</option>
+                            <option>Tesla</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2 pt-3">
+                    <div class="form-group">
+                        <select id="inputState" class="form-control">
+                            <option selected>Model</option>
+                            <option>BMW</option>
+                            <option>Audi</option>
+                            <option>Maruti</option>
+                            <option>Tesla</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2 pt-3">
+                    <div class="form-group">
+                        <select id="inputState" class="form-control">
+                            <option selected>Budget</option>
+                            <option>BMW</option>
+                            <option>Audi</option>
+                            <option>Maruti</option>
+                            <option>Tesla</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2 pt-3">
+                    <div class="form-group">
+                        <select id="inputState" class="form-control">
+                            <option selected>Type</option>
+                            <option>BMW</option>
+                            <option>Audi</option>
+                            <option>Maruti</option>
+                            <option>Tesla</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn  btn-block my-button">Search</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <section class="jumbotron text-center " style="/*margin-top: -55px*/">
+            <div class="container">
+                <h3>Find All Your Needs Here </h3>
+                <p class="lead text-muted">
+                    A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write perfect ad copy
+                </p>
+                <p>
+                <div class="input-group mb-3 " style="width: 500px;margin: auto">
+                    <input type="text" class="form-control" placeholder="Search For You Product " aria-label="Recipient&#39;s username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary"  type="button" id="products-search-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="hvr-forward  header-title">Our Products <hr></h3>
+                    <div class="row" id="put-products-here">
+
+                    </div>
+                      <div class="text-center mt-4 mb-4">
+                              <button class="btn  my-button" type="button" id="load-more">
+                                  <span class="spinner-grow spinner-grow-sm" id="spinner" style="display:none;" role="status" aria-hidden="true"></span>
+                                  <span id="loading-msg" style="display: none">Loading...</span>
+                                  <span id="load-more-msg">Load More</span>
+                              </button>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;margin-top: 60px">
+                        <div class="card-header">
+                            Categories
+                            <button class="btn btn-sm " style="float: right;" id="open" >
+                                <i class="fa fa-arrow-down fa-arrow-up"></i>
+                            </button>
+                        </div>
+                        <ul class="list-group list-group-flush collapse_1" id="put-cats-here">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+           <div class="row">
+               <div class="col-md-9">
+                   <div class="portfolio-menu mt-2 mb-4">
+                       <ul style="margin-left: -40px;text-align: left" id="put-shuffle-categories-here">
+                           <li class="btn btn-sm active my-button" data-filter="*">All</li>
+<!--                           <li class="btn btn-sm my-button" data-filter=".gts">Girls T-shirt</li>-->
+<!--                           <li class="btn btn-sm my-button" data-filter=".lap">Laptops</li>-->
+<!--                           <li class="btn btn-sm my-button text" data-filter=".selfie">selfie</li>-->
+                       </ul>
+                   </div>
+                   <div class="portfolio-item row" id="put-your-trends-products-here">
+                       <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                           <a href="http://localhost/iti/projects/v2/front-end/images/img-2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                               <img class="img-fluid" src="http://localhost/iti/projects/v2/front-end/images/img-2.jpg" alt="">
+                           </a>
+                       </div>
+
+                   </div>
+               </div>
+
+
+           </div>
+        </div>
+        <!-- Start container -->
+
+
+        <section class="jumbotron text-center mt-5" style="margin-top: -55px">
+            <div class="container">
+                <h3>Subscribe to be updated </h3>
+                <p>
+                <div class="input-group mb-3 " style="width: 500px;margin: auto">
+                    <input type="text" class="form-control" placeholder="subscribe to know the new products" aria-label="Recipient&#39;s username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn"  type="button" id="products-subscribe-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </section>
+        <div class="container">
+            <h3 class="hvr-forward header-title">Our  Partners <hr></h3>
+            <section class="customer-logos slider">
+                <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+                <div class="slide"><img src="http://www.webcoderskull.com/img/logo.png"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+                <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+            </section>
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer bg-dark text-white text-center mt-5">
+            <p class="lead">All Right  &copy;Reserved For ITI 2020</p>
+        </footer>
+        <div>
+            <a href="#" class="hvr-pulse" id="to-top">
+                <i class="fa fa-arrow-up" >
+                </i>
+            </a>
+        </div>
+        <div class="toast" role="alert" data-delay="2000" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="mr-auto" style="color: #ff6600">SOUQ</strong>
+                <small class="text-muted">Just Now</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Product Added To Cart Successfully
+            </div>
+        </div>
+    </main>
+    <!-- End main -->
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="../plugins/shop-slider/dist/carousel.min.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/shop.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+<script>
+
+    const options = {
+        animation: 'fade',
+        auto: false,
+        controls: true,
+        items: [
+            { 'src': 'https://www.jqueryscript.net/dummy/1.jpg' },
+            { 'src': 'https://source.unsplash.com/vDs7KenVpw0/600x450' },
+            { 'src': 'https://www.jqueryscript.net/dummy/3.jpg' },
+            { 'src': 'https://www.jqueryscript.net/dummy/5.jpg' }
+        ]
+    };
+    const api = $('#dummy').carousel(options);
+
+    $('#open').click(()=>{
+        $( ".collapse_1" ).toggle('slow', function() {
+            $(this).toggleClass('show');
+            $('#open > i').toggleClass('fa-arrow-up');
+        });
+    })
+
+
+</script>
+<script>
+    $('#load-more').click(function () {
+        $("#spinner").css("display",'inline-block');
+        setTimeout(hideSpinner, 700);
+        $('#load-more-msg').css('display','none');
+        $('#loading-msg').css('display','unset');
+        getAllProducts(-1)
+    });
+    function hideSpinner() {
+        $("#spinner").css("display",'none');
+        $("#load-more").css("display",'none');
+    }
+</script>
+</body>
+</html>

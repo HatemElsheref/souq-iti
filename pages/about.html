@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>SOUQ</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- font-awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="icon" href="https://cf1.s3.souqcdn.com/static/ltr/en/images/souq-new.ico">
+    <!-- wow -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/hover.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/about.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body onload="HideLoader()" style="margin:0;">
+<div id="loader"></div>
+<div id="myDiv">
+    <!-- Start header -->
+    <header>
+        <!-- Image and text -->
+        <nav class="navbar  navbar-light   navbar-expand-lg" id="nav_1">
+            <!--            <a class="navbar-brand text-white" href="#">-->
+            <!--                SOUQ-->
+            <!--                <img src="Souq_Logo_Primary_EN.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">-->
+            <!--            </a>-->
+            <span>
+                 <span class="fa fa-envelope text-white"></span>
+                <span class="text-white ml-2 mr-2 contact">Email : support@souq.com</span>
+            </span>
+            <span>
+                  <span class="fa fa-phone text-white"></span>
+                   <span class="text-white ml-2 mr-2 contact">call us : +201090703457</span>
+           </span>
+            <div class="navbar-collapse" id="nav-info">
+                    <span class="navbar-nav mr-auto">
+                    </span>
+                <!--end navbar-right -->
+                <!--    social        -->
+                <a href="#" class="text-white social"><span class=" fa fa-facebook ml-2 mr-2 "></span></a>
+                <a href="#" class="text-white social"><span class=" fa fa-twitter ml-2 mr-2 "></span></a>
+                <a href="#" class="text-white social"><span class=" fa fa-instagram ml-2 mr-2 "></span></a>
+                <span class="text-white">
+                                <span class="fa fa-heart text-white"></span>
+                                <span class="badge">0</span>
+                    </span>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown ">
+                            <span id="cart-icon" class="dropdown-toggle text-white " data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="fa fa-shopping-cart" style="color:#ff6600"></span>
+                                <span class="badge " id="total-products">0</span>
+                            </span>
+                        <ul class="dropdown-menu dropdown-cart" role="menu" id="put-you-products-here">
+                            <li>
+                                <span class="item">
+                                    <span class="item-left">
+                                        <span class="item-info">
+                                            <span>No Products Founded</span>
+                                        </span>
+                                        </span>
+                                </span>
+                            </li>
+                            <li class="divider"></li>
+                            <!--                            <li><a class="text-center" href="">View Cart</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+                <span class="text-white ml-2 mr-2" style="font-family: monospace"> | الجنيه المصرى </span>
+                <span class="flag-icon flag-icon-eg "></span>
+            </div>
+        </nav>
+        <nav class="navbar  navbar-expand-md navbar-light"  id="nav_2" style="/*background-color: #44137e*/">
+            <a class="navbar-brand" href="#">
+                SOUQ
+                <img src="../images/Souq_Logo_Primary_EN.svg" width="30" height="30" class="d-inline-block align-top" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="shop.html">Shop</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="contact.html">Contact us</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="put-categories-here">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="auth.html">Login</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link hvr-underline-from-left hover-color" href="auth.html">Register</a>
+                    </li>
+                </ul>
+                <!--                <span class="dropdown">-->
+                <!--                    <div class="container">-->
+                <!--                          <ul class="navbar-nav mr-auto">-->
+                <!--                    <li class="nav-item">-->
+                <!--                        <a class="nav-link hvr-underline-from-left hover-color" href="http://localhost/projects/index.html">Login</a>-->
+                <!--                    </li>-->
+                <!--                        <li class="nav-item ">-->
+                <!--                            <a class="nav-link hvr-underline-from-left hover-color" href="http://localhost/projects/index.html">Register</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                    </div>-->
+                <!--                </span>-->
+            </div>
+        </nav>
+
+        <!--        <nav class="navbar navbar-expand-md navbar-dark bg-dark " id="nav-2">-->
+        <!--            <ul class="navbar-nav  mr-auto" id="put-categories-here">-->
+
+        <!--                <li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Laptops</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Dell</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">HP</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Mouse</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Desktop</a></li><li class="nav-item"><a class="nav-link" href="http://localhost/projects/index.html#">Windows</a></li></ul>-->
+        <!--        </nav>-->
+    </header>
+    <!-- End header -->
+    <!-- Start main -->
+    <main class="mt-3" role="main">
+        <section class="AboutUS  text-light  wow  fadeInUp " data-wow-duration="2s">
+            <div class="margin-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 ">
+                            <h1 class="font-weight-bold text-center text-ligh animate__animated  animate__backInRight">About us</h1>
+                            <p class="lead text-justify text-ligh animate__animated  animate__backInLeft">Welcome to <span class="font-weight-bold"> Souq.com </span> – the Middle East’s online marketplace. We connect people and products – opening up a world of possibility. From bracelets and backpacks to tablets and toy cars –
+                                we give you access to everything you need and want. Our range is unparalleled, and our prices unbeatable.
+                            </p>
+                            <ul class="list-unstyled mb-0 text-center animate__animated  animate__backInLeft">
+                                <a class="p-2 fa-lg fb-ic">
+                                    <i class="fa fa-facebook-f blue-text"> </i>
+                                </a>
+                                <a class="p-2 fa-lg tw-ic">
+                                    <i class="fa fa-twitter blue-text"> </i>
+                                </a>
+                                <a class="p-2 fa-lg ins-ic">
+                                    <i class="fa fa-instagram blue-text"> </i>
+                                </a>
+                            </ul>
+                            <button class="btn btn-light text-center mt-2 btn-block animate__animated  animate__backInLeft"><a href="#services">Learn more</a></button>
+                        </div>
+                        <div class="img col-md-6 col-sm-12">
+                            <img src="../images/vectors/1.png" class="animate__animated animate__bounce">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="animate__animated  animate__backInLeft services" id="services">
+            <div class="container text-center">
+                <h2 class="text-center">Our Services</h2>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt debitis.</p>
+                <div class="row text-center">
+                    <div class="animate__animated  animate__backInLeft service col-sm-12 col-md-4">
+                        <i class="	fa fa-shopping-cart"></i>
+                        <h3>Online tracking</h3>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptates optio praesentium tempore quod error mollitia corrupti? Incidunt,</p>
+                    </div>
+                    <div class="animate__animated  animate__backInLeft service col-sm-12 col-md-4">
+                        <i class="fa fa-credit-card"></i>
+                        <h3>Online tracking</h3>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptates optio praesentium tempore quod error mollitia corrupti? Incidunt,</p>
+                    </div>
+                    <div class="animate__animated  animate__backInLeft service col-sm-12 col-md-4">
+                        <i class="	fa fa-thumbs-o-up"></i>
+                        <h3>Ex cupidatat eu</h3>
+                        <p class="lead">Voluptate ex irure ipsum ipsum ullamco ipsum reprehenderit non ut mollit commodo.</p>
+                    </div>
+                    <div class="animate__animated  animate__backInLeft service col-sm-12 col-md-4">
+                        <i class="fa fa-gear"></i>
+                        <h3>Tempor aute occaecat</h3>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptates optio praesentium tempore quod error mollitia corrupti? Incidunt,</p>
+                    </div>
+                    <div class="animate__animated  animate__backInLeft service col-sm-12 col-md-4">
+                        <i class="fa fa-rocket"></i>
+                        <h3>Voluptate ex irure</h3>
+                        <p class="lead">Voluptate ex irure ipsum ipsum ullamco ipsum reprehenderit non ut mollit commodo.</p>
+                    </div>
+                    <div class="animate__animated  animate__backInLeft service col-sm-12 col-md-4">
+                        <i class="fa fa-calendar"></i>
+                        <h3>Tempor commodo</h3>
+                        <p class="lead">Et fugiat sint occaecat voluptate incididunt anim nostrud ea cillum cillum consequat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Team text-center">
+            <div class="dark"></div>
+            <div class="container">
+                <h2 class="h1-responsive font-weight-bold my-5">Our amazing team</h2>
+                <!-- Section description -->
+                <!-- <p class="grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+                eum porro a pariatur veniam.</p> -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5 animate__animated animate__fadeInLeft">
+                        <div class="avatar mx-auto">
+                            <img src="../images/team/mousa.jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Moussa Ahmed</h5>
+                        <h5><strong>front-end developer</strong></h5>
+                        <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam modi tempora eius.</p>
+                        <ul class="list-unstyled mb-0">
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fa fa-facebook blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg tw-ic">
+                                <i class="fa fa-twitter blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fa fa-instagram blue-text"> </i>
+                            </a>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5 animate__animated animate__fadeInLeft">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Hatem </h5>
+                        <h5><strong>back-end developer</strong></h5>
+                        <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam modi tempora eius.</p>
+                        <ul class="list-unstyled mb-0">
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fa fa-facebook-f blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg tw-ic">
+                                <i class="fa fa-twitter blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fa fa-instagram blue-text"> </i>
+                            </a>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5 animate__animated animate__fadeInLeft">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Ahmed Elkoly</h5>
+                        <h5><strong>back-end developer</strong></h5>
+                        <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam modi tempora eius.</p>
+                        <ul class="list-unstyled mb-0">
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fa fa-facebook-f blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg tw-ic">
+                                <i class="fa fa-twitter blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fa fa-instagram blue-text"> </i>
+                            </a>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5 animate__animated animate__fadeInLeft">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
+                        </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Hager El Ziat</h5>
+                        <h5><strong>back-end developer</strong></h5>
+                        <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam modi tempora eius.</p>
+                        <ul class="list-unstyled mb-0">
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fa fa-facebook-f blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg tw-ic">
+                                <i class="fa fa-twitter blue-text"> </i>
+                            </a>
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fa fa-instagram blue-text"> </i>
+                            </a>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="footer bg-dark text-white text-center">
+            <p class="lead">All Right &copy;Reserved For ITI 2020</p>
+        </footer>
+        <div>
+            <a href="#" class="hvr-pulse" id="to-top">
+                <i class="fa fa-arrow-up">
+                </i>
+            </a>
+        </div>
+    </main>
+    <!-- End main -->
+
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="../js/wow.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/yourcode.js"></script>
+<script src="../js/global.js"></script>
+</html>

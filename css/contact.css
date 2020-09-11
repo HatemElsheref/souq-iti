@@ -1,0 +1,104 @@
+body{
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Roboto', sans-serif;
+
+}
+#triangle-topleft {
+    border-top: 672px solid #f26b11;
+    border-right: 1626px solid transparent;
+    position: absolute;
+}
+.contact-box{
+    border-radius: 14px;
+    padding: 50px 0px 50px 35px;
+    max-width: 500px;
+    /* overflow: hidden; */
+    /* border: 2px solid #565656; */
+    margin: auto;
+    margin-top: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+
+}
+.contact-box input ,.contact-box textarea {
+    background-color: #56565600;
+    border: 1px solid #e66814;
+}
+.contact-box .message i{
+    font-size:50px;
+    background-color: #f26b11;
+    padding: 21px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+.contact-box ul i{
+    font-size: larger;
+    text-align: center;
+}
+.contact-box .message {
+    border-radius: 50%;
+    margin: -25px auto;
+    position: absolute;
+    top: -3%;
+    left: 43%;
+}
+
+.contact{
+    margin-top: 30px ;
+}
+.contact-info .img-fluid {
+    max-width: 100%;
+    height: auto;
+    width: 371px !important;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px 4px;
+    overflow: hidden;
+}
+.card-up{
+    width: 100%;
+    height: 150px;
+    background-color: #c57224;
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+
+
+
+
+}
+.card img {
+    position: relative;
+    width: 210px;
+    transition: width .5s ease-in-out;
+
+}
+.card .card-up{
+    transition: background-color .5s ease-in-out;
+}
+
+.card:hover .card-up{
+    background-color: #f26b11;
+}
+.card p{
+    transition: color .5s ease-in-out;
+}
+.card:hover p{
+    color:black;
+}
+
+.card:hover img{
+    width: 220px;
+}
+.card:hover img{
+    background-color: #153754;
+}
+.icon i:hover{
+    color: #f26b11;
+}

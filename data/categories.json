@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "Laptops"},
+    { "id": 2, "name": "Dell"},
+    { "id": 3, "name": "HP"},
+    { "id": 4, "name": "Mouse"},
+    { "id": 5, "name": "Desktop" },
+   { "id": 6, "name": "Windows" }
+]
